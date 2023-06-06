@@ -22,7 +22,7 @@ def execute_app(file:str,path:str|tuple,exit_keys:str='ctrl+alt+q',add_options:t
         try:
             path_ = search_values(mainkeys=path[0],
                           subkeys=path[1])
-            path = re.findall(fr'\b\w\w?:\\.*?\.exe\b', path_[path[0]][path[1]])[0]
+            path = re.findall(fr'\b\w\w?:\\.*?\.exe\b', path_[path[0]][path[1]], flags=re.I)[0]
         except Exception:
             print('Path not found')
             return
